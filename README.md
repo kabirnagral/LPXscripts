@@ -1,1 +1,1 @@
-# LPXscipts
+# LPXscripts

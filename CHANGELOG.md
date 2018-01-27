@@ -14,9 +14,8 @@ To format this for the majority of our contributors and our international contri
 
 The format for daily commits should be as follows:
 
-<The message for whatever was committed>
-
-Files edited: <List of files edited>
+The message for whatever was committed.
+Files edited: List of files edited.
 
 #### 26/01/2018
 

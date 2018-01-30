@@ -21,3 +21,8 @@ Files edited: List of files edited.
 
 Created a Change Log.
 Files edited: CHANGELOG.md
+
+#### 29/01/2018
+
+Added an image to assets. Started working on functions for the library.
+Files Edited: plugin.js, strum.js, assets/images

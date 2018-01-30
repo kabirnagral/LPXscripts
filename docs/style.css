@@ -1,0 +1,56 @@
+body,h1,h2,h3,h4,h5
+{
+  font-family: "Poppins", sans-serif
+}
+body
+{
+  font-size:16px;
+}
+.w3-half img
+{
+  margin-bottom:-6px;margin-top:16px;opacity:0.8;cursor:pointer
+}
+.w3-half img:hover
+{
+  opacity:1
+}
+#mySidebar
+{
+  z-index:3;
+  width:300px;
+  font-weight:bold;
+}
+#closeMenu
+{
+  width:100%;
+  font-size:22px;
+}
+#pageContent
+{
+  margin-left:340px;
+  margin-right:40px;
+}
+
+#resultsTable
+{
+  overflow-x: scroll;
+  overflow-y: scroll;
+}
+
+th
+{
+  cursor: pointer;
+}
+
+/*
+#resultsTable{
+  border: 1px solid black;
+}*/
+
+/*tr.bottom{
+  border-bottom: 1px solid #3F51B5;
+}
+
+tr.item{
+  border-bottom: 1px dashed #3F51B5;
+}*/

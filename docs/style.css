@@ -42,6 +42,21 @@ th
   cursor: pointer;
 }
 
+.cd-accordion-menu input[type=checkbox] {
+	/* hide native checkbox */
+	position: absolute;
+	opacity: 0;
+}
+.cd-accordion-menu label, .cd-accordion-menu a {
+	position: relative;
+	display: block;
+	padding: 18px 18px 18px 64px;
+	background: #4d5158;
+	box-shadow: inset 0 -1px #555960;
+	color: #ffffff;
+	font-size: 1.6rem;
+}
+
 /*
 #resultsTable{
   border: 1px solid black;

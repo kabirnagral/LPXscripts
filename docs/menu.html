@@ -1,5 +1,5 @@
 <nav class="w3-sidebar w3-indigo w3-collapse w3-top w3-large w3-padding" id="mySidebar"><br>
-  <a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-hide-large w3-display-topleft" id="closeMenu">Close Menu</a>
+  <!-- <a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-hide-large w3-display-topleft" id="closeMenu">Close Menu</a>
   <div class="w3-container">
     <h3 class="w3-padding-64"><b><a href="./" style="text-decoration: none">LPX Scripts</a></b></h3>
   </div>
@@ -7,7 +7,31 @@
     <a href="./" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Home</a>
     <a href="./about" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">About</a>
     <a href="./quickref" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Quick Reference Guide</a>
-  </div>
+  </div> -->
+  <ul class="cd-accordion-menu">
+	<li class="has-children">
+		<input type="checkbox" name ="group-1" id="group-1" checked>
+		<label for="group-1">Group 1</label>
+
+  		<ul>
+  			<li class="has-children">
+  				<input type="checkbox" name ="sub-group-1" id="sub-group-1">
+				<label for="sub-group-1">Sub Group 1</label>
+
+				<ul>
+					<li><a href="#0">Image</a></li>
+					<li><a href="#0">Image</a></li>
+					<li><a href="#0">Image</a></li>
+				</ul>
+  			</li>
+  			<li><a href="#0">Image</a></li>
+			<li><a href="#0">Image</a></li>
+  		</ul>
+	</li>
+
+	<li><a href="#0">Image</a></li>
+	<li><a href="#0">Image</a></li>
+</ul>
 </nav>
 
 <!-- Top menu on small screens -->

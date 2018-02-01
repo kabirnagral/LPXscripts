@@ -1,28 +1,30 @@
-<nav class="w3-sidebar w3-indigo w3-collapse w3-top w3-large w3-padding" id="mySidebar"><br>
+<nav class="w3-sidebar w3-black w3-collapse w3-top w3-large w3-padding" id="mySidebar"><br>
   <a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-hide-large w3-display-topleft" id="closeMenu">Close Menu</a>
   <div class="w3-container">
     <h3 class="w3-padding-64"><b><a href="./" style="text-decoration: none">LPX Scripts</a></b></h3>
   </div>
   <div class="w3-bar-block">
-    <a href="./" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Home</a>
 
-    <a href="./about" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">About</a>
+    <a href="./" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-grey">Home</a>
 
-    <a href="./quickref" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Quick Reference Guide</a>
+    <a href="./about" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-grey">About</a>
 
-    <button class="w3-bar-item w3-button w3-hover-white" onclick="myAccFunc('parentOne')">Parent <i class="fa fa-caret-down"></i></button>
+    <a href="./quickref" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-grey">Quick Reference Guide</a>
+
+    <button class="w3-bar-item w3-button w3-hover-grey" onclick="myAccFunc('parentOne')">Parent <i class="fa fa-caret-down"></i></button>
       <div id="parentOne" class="w3-hide w3-red">
-        <a href="./about" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Child</a>
-        <a href="./about" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Child</a>
+        <a href="./about" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-grey">Child</a>
+        <a href="./about" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-grey">Child</a>
       </div>
-    <button class="w3-bar-item w3-button w3-hover-white" onclick="myAccFunc('Acc')">Grandparent <i class="fa fa-caret-down"></i></button>
+
+    <button class="w3-bar-item w3-button w3-hover-grey" onclick="myAccFunc('Acc')">Grandparent <i class="fa fa-caret-down"></i></button>
       <div id="Acc" class="w3-hide w3-red">
-        <button onclick="myAccFunc('Acc1')" class="w3-bar-item w3-button w3-hover-white">Parent <i class="fa fa-caret-down"></i></button>
+        <button onclick="myAccFunc('Acc1')" class="w3-bar-item w3-button w3-hover-grey">Parent <i class="fa fa-caret-down"></i></button>
         <div id="Acc1" class="w3-hide w3-red">
-          <a href="./about" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Child</a>
-          <a href="./about" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Child</a>
+          <a href="./about" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-grey">Child</a>
+          <a href="./about" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-grey">Child</a>
         </div>
-        <a href="./about" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Parent</a>
+        <a href="./about" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-grey">Parent</a>
       </div>
   </div>
 </nav>

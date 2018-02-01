@@ -27,3 +27,7 @@ Added an image to assets. Started working on functions for the library. Files Ed
 #### 30/01/2018
 
 Started creating a framework for the guide website. Files edited: index.html menu.html, about.html, quickref.html, style.css, style.js
+
+#### 31/01/2018
+
+Created a sidebar structure for the guide website. Files edited: menu.html, style.js, style.css

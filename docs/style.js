@@ -16,8 +16,8 @@ function onClick(element) {
   captionText.innerHTML = element.alt;
 }
 
-function myAccFunc() {
-    var x = document.getElementById("demoAcc");
+function myAccFunc(element) {
+    var x = document.getElementById(element);
     if (x.className.indexOf("w3-show") == -1) {
         x.className += " w3-show";
         x.previousElementSibling.className += " w3-green";

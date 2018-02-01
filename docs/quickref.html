@@ -16,23 +16,353 @@
   <div w3-include-html="menu.html"></div>
 
   <script>
-    w3.includeHTML();
+  w3.includeHTML();
   </script>
 
-  <!-- Results -->
   <div class="w3-main" id="pageContent">
-    <div class="w3-container" style="margin-top:75px">
-      <div>
-        <h1 class="w3-xxlarge w3-text-indigo"><b>Library</b></h1>
-        <hr style="width:50px;border:5px solid indigo" class="w3-round">
-        <p class="w3-xlarge">LPX Scripts...</p>
-      </div>
-      <div>
-        <h1 class="w3-xxlarge w3-text-indigo"><b>Website Guide</b></h1>
-        <hr style="width:50px;border:5px solid indigo" class="w3-round">
-        <p class="w3-xlarge">LPX Scripts...</p>
+    <div class="w3-container" id="results" style="margin-top:75px">
+      <h1 class="w3-xxlarge w3-text-indigo"><b>Results</b></h1>
+      <hr style="width:50px;border:5px solid indigo" class="w3-round">
+      <input class="w3-input" oninput="w3.filterHTML('#quickrefTables', '.item', this.value)" placeholder="Search the quick reference">
+
+      <div style="overflow-x: auto; overflow-y: auto" id="quickrefTables">
+          <table class="w3-table w3-border w3-bordered w3-margin-top">
+            <caption>Global attributes and functions</caption>
+            <tbody>
+              <tr class="item">
+                <td><code>NeedsTimingInfo:boolean</code></td>
+                <td style="width:60%;">Defining <code>NeedsTimingInfo</code> as <code>true</code> at the global scope enables the <code>GetTimingInfo()</code> function</td>
+              </tr>
+              <tr class="item">
+                <td><code>ResetParameterDefaults:boolean</code></td>
+                <td>Sets&nbsp;UI controls to default values</td>
+              </tr>
+              <tr class="item">
+                <td><code>HandleMIDI(Event)</code></td>
+                <td>This function is called each time a MIDI event is received by the plug-in, and is required to process incoming MIDI events. If you do not implement this function, events pass through the plug-in unaffected.</td>
+              </tr>
+              <tr class="item">
+                <td><code>ProcessMIDI()</code></td>
+                <td>This function is called once per “process block,” which is determined by the host’s audio settings (sample rate and buffer size). This function is often used in combination with the <code>TimingInfo</code> object to make use of timing information from the host application. To enable the <code>GetTimingInfo</code> feature, add <code>NeedsTimingInfo = true</code> at the global script level.</td>
+              </tr>
+              <tr class="item">
+                <td><code>ParameterChanged(integer, real)</code></td>
+                <td>This function is called each time one of the plug-in’s parameters is set to a new value. It is also called once for each parameter when you load a plug-in setting.</td>
+              </tr>
+              <tr class="item">
+                <td><code>Reset()</code></td>
+                <td>This function is called when the plugin is reset</td>
+              </tr>
+              <tr class="item">
+                <td><code>Trace(value)</code></td>
+                <td>Prints a&nbsp;message to&nbsp;the console that represents the&nbsp;supplied value of any type</td>
+              </tr>
+              <tr class="item">
+                <td><code>GetTimingInfo():TimingInfo</code></td>
+                <td>Retrieves a&nbsp;<code>TimingInfo</code> object, which contains timing information that describes the state of the host transport and the current musical tempo and meter.</td>
+              </tr>
+              <tr class="item">
+                <td><code>GetParameter(string):real</code></td>
+                <td>Returns a&nbsp;given parameter’s current value. <code>GetParameter()</code> is typically called inside the <code>HandleMIDI()</code> or <code>ProcessMIDI()</code> functions.</td>
+              </tr>
+            </tbody>
+          </table>
+
+
+          <table>
+            <caption>Event – Base class for all events</caption>
+            <tbody>
+              <tr class="item">
+                <td style="width:40%;"><code>send()</code></td>
+                <td style="width:60%;">Send the event</td>
+              </tr>
+              <tr class="item">
+                <td><code>sendAfterMilliseconds(ms:real)</code></td>
+                <td>Send the event after the specified value has elapsed</td>
+              </tr>
+              <tr class="item">
+                <td><code>sendAtBeat(beat:real)</code></td>
+                <td>Send the event at a specific beat in the host’s timeline</td>
+              </tr>
+              <tr class="item">
+                <td><code>sendAfterBeats(beats:real)</code></td>
+                <td>Similar to <code>sendAtBeat()</code>, but uses the beat value as a delay in beats from the current position.</td>
+              </tr>
+              <tr class="item">
+                <td><code>trace()</code></td>
+                <td>Prints the event to the plug-in console</td>
+              </tr>
+              <tr class="item">
+                <td><code>toString()</code></td>
+                <td>Returns a string representation of the event</td>
+              </tr>
+              <tr class="item">
+                <td>channel(integer)</td>
+                <td>Sets MIDI channel 1 to 16. Note: <code>Event.channel</code> is an event property, rather than a method, so it may be used in expressions such as <code>(evt.channel == 1)</code> where <code>evt</code> is an instance of <code>Event</code>)</td>
+              </tr>
+            </tbody>
+          </table>
+          <p><!--===== Note =====--></p>
+          <table>
+            <caption>Note – Base class for note events</caption>
+            <tbody>
+              <tr class="item">
+                <td style="width:40%;"><code>Note()</code></td>
+                <td style="width:60%;">Constructor</td>
+              </tr>
+              <tr class="item">
+                <td><code>toString()</code></td>
+                <td>Returns a String representation of the Note event.</td>
+              </tr>
+            </tbody>
+          </table>
+          <p><!--===== NoteOn =====--></p>
+          <table>
+            <caption>NoteOn – Represents a note on event</caption>
+            <tbody>
+              <tr class="item">
+                <td style="width:40%;"><code>NoteOn(Event)</code></td>
+                <td style="width:60%;">Constructor</td>
+              </tr>
+              <tr class="item">
+                <td><code>pitch(integer)</code></td>
+                <td>Pitch from 1–127</td>
+              </tr>
+              <tr class="item">
+                <td><code>velocity(integer)</code></td>
+                <td>Velocity from 0–127. A velocity value of 0 is interpreted as a note off event, not a note on.</td>
+              </tr>
+            </tbody>
+          </table>
+          <p><!--===== NoteOff =====--></p>
+          <table>
+            <caption>NoteOff – Represents a note off event</caption>
+            <tbody>
+              <tr class="item">
+                <td style="width:40%;"><code>NoteOff(Event)</code></td>
+                <td style="width:60%;">Constructor</td>
+              </tr>
+              <tr class="item">
+                <td><code>pitch(integer)</code></td>
+                <td>Pitch from 1–127</td>
+              </tr>
+              <tr class="item">
+                <td><code>velocity(integer)</code></td>
+                <td>Velocity from 0–127</td>
+              </tr>
+            </tbody>
+          </table>
+          <p><!--===== PolyPressure =====--></p>
+          <table>
+            <caption>PolyPressure – Represents a Polyphonic aftertouch event</caption>
+            <tbody>
+              <tr class="item">
+                <td style="width:40%;"><code>PolyPressure(Event)</code></td>
+                <td style="width:60%;">Constructor</td>
+              </tr>
+              <tr class="item">
+                <td><code>pitch(integer)</code></td>
+                <td>Pitch from 1–127</td>
+              </tr>
+              <tr class="item">
+                <td><code>value(integer)</code></td>
+                <td>Pressure value from 0–127</td>
+              </tr>
+              <tr class="item">
+                <td><code>toString()</code></td>
+                <td>Returns a String representation of the PolyPressure event.</td>
+              </tr>
+            </tbody>
+          </table>
+          <p><!--===== ControlChange =====--></p>
+          <table>
+            <caption>ControlChange – Represents a ControlChange event</caption>
+            <tbody>
+              <tr class="item">
+                <td style="width:40%;"><code>ControlChange(Event)</code></td>
+                <td style="width:60%;">Constructor</td>
+              </tr>
+              <tr class="item">
+                <td><code>number(integer)</code></td>
+                <td>Controller number from 0–127.</td>
+              </tr>
+              <tr class="item">
+                <td><code>value(integer)</code></td>
+                <td>Controller value from 0–127.</td>
+              </tr>
+              <tr class="item">
+                <td><code>toString()</code></td>
+                <td>Returns a String representation of the ControlChange event.</td>
+              </tr>
+            </tbody>
+          </table>
+          <p><!--===== ProgramChange =====--></p>
+          <table>
+            <caption>ProgramChange – Represents a ProgramChange event</caption>
+            <tbody>
+              <tr class="item">
+                <td style="width:40%;"><code>ProgramChange(Event)</code></td>
+                <td style="width:60%;">Constructor</td>
+              </tr>
+              <tr class="item">
+                <td><code>number(integer)</code></td>
+                <td>Program change number from 0–127</td>
+              </tr>
+              <tr class="item">
+                <td><code>toString()</code></td>
+                <td>Returns a String representation of the ProgramChange event.</td>
+              </tr>
+            </tbody>
+          </table>
+          <p><!--===== ChannelPressure =====--></p>
+          <table>
+            <caption>ChannelPressure – Represents a ChannelPressure event</caption>
+            <tbody>
+              <tr class="item">
+                <td style="width:40%;"><code>ChannelPressure(Event)</code></td>
+                <td style="width:60%;">Constructor</td>
+              </tr>
+              <tr class="item">
+                <td><code>value(integer)</code></td>
+                <td>Aftertouch value from 0–127</td>
+              </tr>
+              <tr class="item">
+                <td><code>toString()</code></td>
+                <td>Returns a String representation of the ChannelPressure event.</td>
+              </tr>
+            </tbody>
+          </table>
+          <p><!--===== PitchBend =====--></p>
+          <table>
+            <caption>PitchBend – Represents a PitchBend event</caption>
+            <tbody>
+              <tr class="item">
+                <td style="width:40%;"><code>PitchBend(Event)</code></td>
+                <td style="width:60%;">Constructor</td>
+              </tr>
+              <tr class="item">
+                <td><code>value(integer)</code></td>
+                <td>14-bit pitch bend value from -8192–8191. A value of 0 is center.</td>
+              </tr>
+              <tr class="item">
+                <td><code>toString()</code></td>
+                <td>Returns a String representation of the PitchBend event.</td>
+              </tr>
+            </tbody>
+          </table>
+          <p><!--===== Fader =====--></p>
+          <table>
+            <caption>Fader – Represents a Fader event</caption>
+            <tbody>
+              <tr class="item">
+                <td style="width:40%;"><code>Fader(Event)</code></td>
+                <td style="width:60%;">Constructor</td>
+              </tr>
+              <tr class="item">
+                <td><code>value(integer)</code></td>
+                <td>Fader value from 0–127</td>
+              </tr>
+              <tr class="item">
+                <td><code>toString()</code></td>
+                <td>Returns a String representation of the Fader event.</td>
+              </tr>
+            </tbody>
+          </table>
+          <p><!--===== TimingInfo =====--></p>
+          <table>
+            <caption>TimingInfo – Contains timing information that describes the state of the host transport and the current musical tempo and meter</caption>
+            <tbody>
+              <tr class="item">
+                <td style="width:40%;"><code>playing:boolean</code></td>
+                <td style="width:60%;">Value is <code>true</code> when the host transport is running</td>
+              </tr>
+              <tr class="item">
+                <td><code>blockStartBeat:real</code></td>
+                <td>Indicates the beat position at the start of the process block</td>
+              </tr>
+              <tr class="item">
+                <td><code>blockEndBeat:real</code></td>
+                <td>Indicates the beat position at the end of the process block</td>
+              </tr>
+              <tr class="item">
+                <td><code>blockLength:real</code></td>
+                <td>Indicates the length of the process block in beats.</td>
+              </tr>
+              <tr class="item">
+                <td><code>tempo:real</code></td>
+                <td>Indicates the host tempo.</td>
+              </tr>
+              <tr class="item">
+                <td><code>meterNumerator:integer</code></td>
+                <td>Indicates the host meter numerator</td>
+              </tr>
+              <tr class="item">
+                <td><code>meterDemoninator:integer</code></td>
+                <td>Indicates the host meter denominator.</td>
+              </tr>
+              <tr class="item">
+                <td><code>cycling:boolean</code></td>
+                <td>Value is <code>true</code> when the host transport is cycling</td>
+              </tr>
+              <tr class="item">
+                <td><code>leftCycleBeat:real</code></td>
+                <td>Indicates the beat position at the start of the cycle range</td>
+              </tr>
+              <tr class="item">
+                <td><code>rightCycleBeat:real </code></td>
+                <td>Indicates the beat position at the end of the cycle range</td>
+              </tr>
+            </tbody>
+          </table>
+          <p><!--===== MIDI =====--></p>
+          <table>
+            <caption>MIDI – Contains class-level variables and functions (you don’t instantiate MIDI).</caption>
+            <tbody>
+              <tr class="item">
+                <td style="width:40%;"><code>_noteNames:string[]</code></td>
+                <td style="width:60%;">Contains names such as C and G# for all 128 MIDI notes</td>
+              </tr>
+              <tr class="item">
+                <td><code>_ccNames:string[]</code></td>
+                <td>Contains names such as Expression and Sustain for all 128 MIDI controller numbers</td>
+              </tr>
+              <tr class="item">
+                <td><code>noteNumber(string)</code></td>
+                <td>Returns the MIDI note number for a given note name. For example: C3 or B#2. Flats not permitted.</td>
+              </tr>
+              <tr class="item">
+                <td><code>noteName(real)</code></td>
+                <td>Returns the name for a given MIDI note number.</td>
+              </tr>
+              <tr class="item">
+                <td><code>ccName(real)</code></td>
+                <td>Returns the controller name for a given controller number</td>
+              </tr>
+              <tr class="item">
+                <td><code>allNotesOff()</code></td>
+                <td>Sends the all notes off message on all MIDI channels</td>
+              </tr>
+              <tr class="item">
+                <td><code>normalizeStatus(real)</code></td>
+                <td>Normalizes a value to the safe range of MIDI status bytes (128–239)</td>
+              </tr>
+              <tr class="item">
+                <td><code>normalizeChannel(real)</code></td>
+                <td>Normalizes a value to the safe range of MIDI channels (1–16)</td>
+              </tr>
+              <tr class="item">
+                <td><code>normalizeData(real)</code></td>
+                <td>Normalizes a value to the safe range of MIDI data bytes (0–127)</td>
+              </tr>
+              <tr class="item">
+                <td><code>_sendEventOnAllChannels(Event)</code></td>
+                <td>Sends a given event to all MIDI channels</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
-  </div>
-</body>
-</html>
+
+  </body>
+  </html>

@@ -3,16 +3,14 @@
   <div class="w3-container">
     <h3 class="w3-padding-64"><b><a href="./" style="text-decoration: none">LPX Scripts</a></b></h3>
   </div>
-  <div class="w3-bar-block">
+  <div class="w3-bar-block" style="overflow-x: auto; overflow-y: auto">
 
     <a href="./" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-grey">Home</a>
 
     <a href="./about" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-grey">About</a>
 
-    <a href="./quickref" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-grey">Quick Reference Guide</a>
-
-    <button class="w3-bar-item w3-button w3-hover-grey" onclick="myAccFunc('quickref')">Quick Reference Guide<i class="fa fa-caret-down"></i></button>
-      <div id="quickref" class="w3-hide w3-red">
+    <a href="./quickref" class="w3-bar-item w3-button w3-hover-grey" onclick="myAccFunc('quickref')">Quick Reference Guide<i class="fa fa-caret-down"></i></a>
+      <div id="quickref" class="w3-hide">
         <a href="./quickref#global-attributes-and-functions" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-grey">Global Attributes and Functions</a>
 
         <a href="./quickref#events" onclick="myAccFunc('events')" class="w3-bar-item w3-button w3-hover-grey">Events<i class="fa fa-caret-down"></i></a>
@@ -44,16 +42,6 @@
         <a href="./quickref#midi" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-grey">MIDI</a>
 
       </div>
-
-    <!-- <button class="w3-bar-item w3-button w3-hover-grey" onclick="myAccFunc('Acc')">Grandparent <i class="fa fa-caret-down"></i></button>
-      <div id="Acc" class="w3-hide w3-red">
-        <button onclick="myAccFunc('Acc1')" class="w3-bar-item w3-button w3-hover-grey">Parent <i class="fa fa-caret-down"></i></button>
-        <div id="Acc1" class="w3-hide w3-red">
-          <a href="./about" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-grey">Child</a>
-          <a href="./about" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-grey">Child</a>
-        </div>
-        <a href="./about" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-grey">Parent</a>
-      </div> -->
   </div>
 </nav>
 

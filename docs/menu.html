@@ -5,16 +5,19 @@
   </div>
   <div class="w3-bar-block">
     <a href="./" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Home</a>
+
     <a href="./about" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">About</a>
+
     <a href="./quickref" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Quick Reference Guide</a>
-    <button class="w3-bar-item w3-button w3-hover-white" onclick="myAccFunc('demoAcc')">Parent <i class="fa fa-caret-down"></i></button>
-      <div id="demoAcc" class="w3-hide w3-red">
+
+    <button class="w3-bar-item w3-button w3-hover-white" onclick="myAccFunc('parentOne')">Parent <i class="fa fa-caret-down"></i></button>
+      <div id="parentOne" class="w3-hide w3-red">
         <a href="./about" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Child</a>
         <a href="./about" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Child</a>
       </div>
-    <button class="w3-bar-item w3-button w3-hover-white" onclick="myAccFunc1()">Grandparent <i class="fa fa-caret-down"></i></button>
+    <button class="w3-bar-item w3-button w3-hover-white" onclick="myAccFunc('Acc')">Grandparent <i class="fa fa-caret-down"></i></button>
       <div id="Acc" class="w3-hide w3-red">
-        <button id="Acc" onclick="myAccFunc2()" class="w3-bar-item w3-button w3-hover-white">Parent <i class="fa fa-caret-down"></i></button>
+        <button id="Acc" onclick="myAccFunc('Acc1')" class="w3-bar-item w3-button w3-hover-white">Parent <i class="fa fa-caret-down"></i></button>
         <div id="Acc1" class="w3-hide w3-red">
           <a href="./about" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Child</a>
           <a href="./about" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Child</a>

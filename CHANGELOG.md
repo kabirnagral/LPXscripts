@@ -16,6 +16,10 @@ The format for daily commits should be as follows:
 
 The message for whatever was committed. Files edited: List of files edited.
 
+#### 07/02/2018
+
+Figured out how to make the sequencer.js plugin script work. Files edited: sequencer.js
+
 #### 06/02/2018
 
 Created some scripts. Files edited: arpeggiator.js, loopPedal.js, sequencer.js, chords.js, plugin.js

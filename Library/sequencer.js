@@ -3,13 +3,44 @@ var activeNotes = [];
 var sequence = [4, 3, 5];
 /* needed to make beatPos work */
 function HandleMIDI(event) {
-  event.pitch = event.pitch - 1;
-  constructSequence (event);                  /* send the note on */
-  // var off = new NoteOff(on);    /* make a note off using the note on to initialize its pitch value to C3 */
-  // /* note that the beatPos does not get copied here */
-  // off.beatPos = on.BeatPos+1;   /* set the beat position of the note off event */
-  // off.send();                   /* send the note off event */
+  if (event instanceof NoteOn) {
+    constructSequence(event);
+    // activeNotes.push(event);
+    // for (var i = 0; i < sequence.length; i++) {
+    //   var on = new NoteOn (activeNotes[i]);
+    //   var previous  = new NoteOn (activeNotes[i])
+    //   on.pitch = MIDI.normalizeData(previous.pitch + sequence[i]);
+    //   activeNotes.push (on);
+    //   on.sendAtBeat(previous.beatPos + 2);
+    // }
+  }
+
+  else if (event instanceof NoteOff) {
+		// remove note from array
+    Reset();
+		for (i = 0; i < activeNotes.length; i++) {
+			if (activeNotes[i].pitch == event.pitch) {
+				activeNotes.splice(i, 1);
+				break;
+			}
+		}
+	}
+
+  else {
+    event.send();
+  }
 }
+
+function Reset() {
+  activeNotes = [];
+}
+
+// function ProcessMIDI() {
+//   for (var i = 0; i < activeNotes.length; i++) {
+//     var currentNote = new NoteOn (sequence[i]);
+//     currentNote.send();
+//   }
+// }
 
 function constructSequence(event) {
   activeNotes.push (event);
@@ -101,3 +132,13 @@ function chooseNote(noteOrder, step) {
 	if (order == "random") return activeNotes[Math.floor(Math.random() * length)];
 	else return 0;
 }
+
+// function constructSequence(event) {
+//   activeNotes.push (event);
+//   for (var i = 0; i < sequence.length; i++) {
+//     var on = new NoteOn;
+//     on.pitch = MIDI.normalizeData(activeNotes[i].pitch + sequence[i]);
+//     on.beatPos = activeNotes[i].beatPos + 1;
+//     activeNotes.push (on);
+//   }
+// }

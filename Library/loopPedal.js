@@ -27,7 +27,7 @@ function HandleMIDI(event) {
 	else event.send();
 
 	// sort array of active notes
-	// activeNotes.sort(sortByPitchAscending);
+	activeNotes.sort(sortByPitchAscending);
 }
 
 //-----------------------------------------------------------------------------

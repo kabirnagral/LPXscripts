@@ -27,7 +27,8 @@ function HandleMIDI(event) {
 	else event.send();
 
 	// sort array of active notes
-	activeNotes.sort(sortByPitchAscending);
+	// activeNotes.sort(sortByPitchAscending);
+	// Remove the '//' above to force the note to be in order by pitch
 }
 
 //-----------------------------------------------------------------------------
@@ -132,7 +133,7 @@ var PluginParameters =
 		minValue:0, maxValue:1, numberOfSteps: 2, defaultValue:0},
 
 		{name:"Beat Division", type:"linear",
-		minValue:1, maxValue:16, numberOfSteps:15, defaultValue:4},
+		minValue:1, maxValue:16, numberOfSteps:15, defaultValue:1},
 
 		{name:"Note Order", type:"menu", valueStrings:noteOrders,
 		minValue:0, maxValue:2, numberOfSteps: 3, defaultValue:0},

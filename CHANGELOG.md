@@ -14,7 +14,11 @@ To format this for the majority of our contributors and our international contri
 
 The format for daily commits should be as follows:
 
-The message for whatever was committed. Files edited: List of files edited.
+A clear and coherent message for whatever was committed. Files edited: List of files edited (it isn't necessary to include markdown files unless there are significant changes).
+
+#### 08/02/2018
+
+Refined the sequencer.js plugin script to work. Files edited: sequencer.js
 
 #### 07/02/2018
 

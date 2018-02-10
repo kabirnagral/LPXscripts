@@ -12,6 +12,8 @@
 
 ## Logic Pro Scripter Plugin
 
+[Official Guide on the Logic Pro Scripter Plugin](http://help.apple.com/logicpro-effects/mac/10.3/#/lgce728c68f6)
+
 ## Git
 
 [Guide](http://rogerdudler.github.io/git-guide/)

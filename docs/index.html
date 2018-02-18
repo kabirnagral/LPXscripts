@@ -13,7 +13,7 @@
 <script src="app.js" charset="utf-8"></script>
 
 <body>
-<div w3-include-html="menu.html"></div>
+  <div w3-include-html="menu.html"></div>
 
 <script>
   w3.includeHTML();
@@ -21,15 +21,466 @@
 
 <!-- !PAGE CONTENT! -->
 <div class="w3-main" id="pageContent">
-
   <!-- Header -->
-  <div class="w3-container" style="margin-top:180px" on>
-    <h1 class="w3-jumbo"><b>LPX Scripts</b></h1>
+  <div class="w3-container" style="margin-top:10px;" id= "about">
+    <h1 class="w3-jumbo" style="margin-bottom:50px"><b>LPX Scripts</b></h1>
     <h1 class="w3-xxlarge w3-text-indigo"><b>A Guide To The Logic Pro Scripter Plugin</b></h1>
+    <p class="w3-large">
+      LPX Scripts is an open source endeavor to complement the Logic Pro Scripter Plugin. LPXscripts
+      not only serves as a library of scripts that can be used on the plugin, but also aims to
+      guide Logic Pro users to create their own scripts.
+    </p>
   </div>
+
+  <div class="w3-container" style="margin-top:80px" id="how-to-use-library">
+        <h1 class="w3-xxlarge w3-text-indigo" ><b>How to use the Library</b></h1>
+        <hr style="width:50px;border:5px solid indigo" class="w3-round">
+        <p class ="w3-large">
+          The only prerequisite to using the LPX Scripts plugins is plainly that the user must have
+          access to the Logic Pro software. Since LPX must be purchased for use, the scripts can only
+          work with access to the software. With that said, there is no need to understand how the
+          plugins work to use it, meaning that <span style="background-color: #c088ea">the user does
+          not need to understand the code to use the software</span>. Once the user finds a file they
+          would like to use, the steps are pretty simple to going about having them read by Logic Pro.
+          The following is the step-by-step process of using the plugins:
+        </p>
+        <h2 class="w3-xlarge w3-text-indigo" style= "margin-top: 30px"><b><u>Step 1:</u> Locate the Settings Page</b></h1>
+        <p class ="w3-large">
+          Open Logic Pro X application on your computer and go to the left side sidebar, where you
+          will find the settings option.<br>
+            <img src="LPXscripts/docs/images/Sidebar.png"><br>
+          Under the settings option, locate and click on the "scripter" option.<br>
+            <img src="">
+        </p>
+        <h2 class="w3-xlarge w3-text-indigo"><b><u>Step 2:</u> Open the Scripter settings </b></h1>
+        <p class ="w3-large">
+          The page that just appeared will be the page where you can make use of the plugin with the
+          different options the plugin may offer. First we need to input the plugin though, so click
+          on the "Open Script in Editor" button to continue.<br>
+            <img src= "LPXscripts/docs/images/Settings.png">
+        </p>
+        <h2 class="w3-xlarge w3-text-indigo"><b><u>Step 3:</u> Use the Script Editor</b></h1>
+        <p class ="w3-large">
+          A new page will appear with some text already filling the page, this is the Script editor.
+          To input the plugin, copy and paste the code from the plugin file in the repository into
+          the script editor by replacing the code already in the file.<br>
+            <img src= "LPXscripts/docs/images/Scripter.png"><br>
+          Once it is placed in the script editor properly, click the button in the top right called
+          "Run Script".
+            <img src= "LPXscripts/docs/images/ScriptEditor.png"><br>
+        </p>
+        <h2 class="w3-xlarge w3-text-indigo"><b><u>Step 4:</u> Copy and Paste the Code</b></h1>
+        <p class ="w3-large">
+          Upon running the plugin, you will be brought back to the Scripter which will show you the
+          customizable options of the specific plugin. Follow the steps to use that specific plugin
+          and you should be all set!
+        </p>
+  </div>
+
+  <div class="w3-container" style="margin-top:80px" id="Library">
+    <div>
+        <h1 class="w3-xxlarge w3-text-indigo"><b>Library</b></h1>
+        <hr style="width:50px;border:5px solid indigo" class="w3-round">
+        <p class="w3-large">
+          The following is a list of plugins currently available in the library. All files can be
+          found in the <a href="https://github.com/kabirnagral/LPXscripts/tree/master/Library">
+          /Library</a> folder of the repository.
+        </p>
+        <table class="w3-table w3-border w3-bordered w3-margin-top item" id="library-list" style= "margin-bottom: 50px; margin-top: 100px;">
+          <tbody>
+            <tr class="item">
+              <td style="width:40%;"><code>arpeggiator.js</code></td>
+              <td style="width:60%;">Fill description here!</td>
+            </tr>
+            <tr class="item">
+              <td><code>chords.js</code></td>
+              <td>Fill description here!</td>
+            </tr>
+            <tr class="item">
+              <td><code>loopPedal.js</code></td>
+              <td>Fill description here!</td>
+            </tr>
+            <tr class="item">
+              <td><code>plugin.js</code></td>
+              <td>Fill description here!</td>
+            </tr>
+            <tr class="item">
+              <td><code>sequencer.js</code></td>
+              <td>Fill description here!</td>
+            </tr>
+          </tbody>
+        </table>
+    </div>
+  </div>
+
+    <div class="w3-container" id="results" style="margin-top:80px" id="reference-guide">
+      <h1 class="w3-xxlarge w3-text-indigo"><b>Reference Guide</b></h1>
+      <hr style="width:50px;border:5px solid indigo" class="w3-round">
+      <input class="w3-input" oninput="w3.filterHTML('#quickrefTables', '.item', this.value)" placeholder="Search the quick reference">
+
+      <div style="overflow-x: auto; overflow-y: auto" id="quickrefTables">
+          <table class="w3-table w3-border w3-bordered w3-margin-top item" id="global-attributes-and-functions"
+            style ="margin-bottom: 50px;">
+            <caption>Global attributes and functions</caption>
+            <tbody>
+              <tr class="item">
+                <td><code>NeedsTimingInfo:boolean</code></td>
+                <td style="width:60%;">Defining <code>NeedsTimingInfo</code> as <code>true</code> at the global scope enables the <code>GetTimingInfo()</code> function</td>
+              </tr>
+              <tr class="item">
+                <td><code>ResetParameterDefaults:boolean</code></td>
+                <td>Sets&nbsp;UI controls to default values</td>
+              </tr>
+              <tr class="item">
+                <td><code>HandleMIDI(Event)</code></td>
+                <td>This function is called each time a MIDI event is received by the plug-in, and is required to process incoming MIDI events. If you do not implement this function, events pass through the plug-in unaffected.</td>
+              </tr>
+              <tr class="item">
+                <td><code>ProcessMIDI()</code></td>
+                <td>This function is called once per “process block,” which is determined by the host’s audio settings (sample rate and buffer size). This function is often used in combination with the <code>TimingInfo</code> object to make use of timing information from the host application. To enable the <code>GetTimingInfo</code> feature, add <code>NeedsTimingInfo = true</code> at the global script level.</td>
+              </tr>
+              <tr class="item">
+                <td><code>ParameterChanged(integer, real)</code></td>
+                <td>This function is called each time one of the plug-in’s parameters is set to a new value. It is also called once for each parameter when you load a plug-in setting.</td>
+              </tr>
+              <tr class="item">
+                <td><code>Reset()</code></td>
+                <td>This function is called when the plugin is reset</td>
+              </tr>
+              <tr class="item">
+                <td><code>Trace(value)</code></td>
+                <td>Prints a&nbsp;message to&nbsp;the console that represents the&nbsp;supplied value of any type</td>
+              </tr>
+              <tr class="item">
+                <td><code>GetTimingInfo():TimingInfo</code></td>
+                <td>Retrieves a&nbsp;<code>TimingInfo</code> object, which contains timing information that describes the state of the host transport and the current musical tempo and meter.</td>
+              </tr>
+              <tr class="item">
+                <td><code>GetParameter(string):real</code></td>
+                <td>Returns a&nbsp;given parameter’s current value. <code>GetParameter()</code> is typically called inside the <code>HandleMIDI()</code> or <code>ProcessMIDI()</code> functions.</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p><!--===== Event =====--></p>
+
+          <table class="w3-table w3-border w3-bordered w3-margin-top item" id="events" style ="margin-bottom: 50px;">
+            <caption>Event – Base class for all events</caption>
+            <tbody>
+              <tr class="item">
+                <td style="width:40%;"><code>send()</code></td>
+                <td style="width:60%;">Send the event</td>
+              </tr>
+              <tr class="item">
+                <td><code>sendAfterMilliseconds(ms:real)</code></td>
+                <td>Send the event after the specified value has elapsed</td>
+              </tr>
+              <tr class="item">
+                <td><code>sendAtBeat(beat:real)</code></td>
+                <td>Send the event at a specific beat in the host’s timeline</td>
+              </tr>
+              <tr class="item">
+                <td><code>sendAfterBeats(beats:real)</code></td>
+                <td>Similar to <code>sendAtBeat()</code>, but uses the beat value as a delay in beats from the current position.</td>
+              </tr>
+              <tr class="item">
+                <td><code>trace()</code></td>
+                <td>Prints the event to the plug-in console</td>
+              </tr>
+              <tr class="item">
+                <td><code>toString()</code></td>
+                <td>Returns a string representation of the event</td>
+              </tr>
+              <tr class="item">
+                <td>channel(integer)</td>
+                <td>Sets MIDI channel 1 to 16. Note: <code>Event.channel</code> is an event property, rather than a method, so it may be used in expressions such as <code>(evt.channel == 1)</code> where <code>evt</code> is an instance of <code>Event</code>)</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p><!--===== Note =====--></p>
+
+          <table class="w3-table w3-border w3-bordered w3-margin-top item" id="notes" style ="margin-bottom: 50px;">
+            <caption>Note – Base class for note events</caption>
+            <tbody>
+              <tr class="item">
+                <td style="width:40%;"><code>Note()</code></td>
+                <td style="width:60%;">Constructor</td>
+              </tr>
+              <tr class="item">
+                <td><code>toString()</code></td>
+                <td>Returns a String representation of the Note event.</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p><!--===== NoteOn =====--></p>
+
+          <table class="w3-table w3-border w3-bordered w3-margin-top item" id="note-on" style ="margin-bottom: 50px;">
+            <caption>NoteOn – Represents a note on event</caption>
+            <tbody>
+              <tr class="item">
+                <td style="width:40%;"><code>NoteOn(Event)</code></td>
+                <td style="width:60%;">Constructor</td>
+              </tr>
+              <tr class="item">
+                <td><code>pitch(integer)</code></td>
+                <td>Pitch from 1–127</td>
+              </tr>
+              <tr class="item">
+                <td><code>velocity(integer)</code></td>
+                <td>Velocity from 0–127. A velocity value of 0 is interpreted as a note off event, not a note on.</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p><!--===== NoteOff =====--></p>
+
+          <table class="w3-table w3-border w3-bordered w3-margin-top item" id="note-off" style ="margin-bottom: 50px;">
+            <caption>NoteOff – Represents a note off event</caption>
+            <tbody>
+              <tr class="item">
+                <td style="width:40%;"><code>NoteOff(Event)</code></td>
+                <td style="width:60%;">Constructor</td>
+              </tr>
+              <tr class="item">
+                <td><code>pitch(integer)</code></td>
+                <td>Pitch from 1–127</td>
+              </tr>
+              <tr class="item">
+                <td><code>velocity(integer)</code></td>
+                <td>Velocity from 0–127</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p><!--===== PolyPressure =====--></p>
+
+          <table class="w3-table w3-border w3-bordered w3-margin-top item" id="polypressure" style ="margin-bottom: 50px;">
+            <caption>PolyPressure – Represents a Polyphonic aftertouch event</caption>
+            <tbody>
+              <tr class="item">
+                <td style="width:40%;"><code>PolyPressure(Event)</code></td>
+                <td style="width:60%;">Constructor</td>
+              </tr>
+              <tr class="item">
+                <td><code>pitch(integer)</code></td>
+                <td>Pitch from 1–127</td>
+              </tr>
+              <tr class="item">
+                <td><code>value(integer)</code></td>
+                <td>Pressure value from 0–127</td>
+              </tr>
+              <tr class="item">
+                <td><code>toString()</code></td>
+                <td>Returns a String representation of the PolyPressure event.</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p><!--===== ControlChange =====--></p>
+
+          <table class="w3-table w3-border w3-bordered w3-margin-top item" id="controlchange" style ="margin-bottom: 50px;">
+            <caption>ControlChange – Represents a ControlChange event</caption>
+            <tbody>
+              <tr class="item">
+                <td style="width:40%;"><code>ControlChange(Event)</code></td>
+                <td style="width:60%;">Constructor</td>
+              </tr>
+              <tr class="item">
+                <td><code>number(integer)</code></td>
+                <td>Controller number from 0–127.</td>
+              </tr>
+              <tr class="item">
+                <td><code>value(integer)</code></td>
+                <td>Controller value from 0–127.</td>
+              </tr>
+              <tr class="item">
+                <td><code>toString()</code></td>
+                <td>Returns a String representation of the ControlChange event.</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p><!--===== ProgramChange =====--></p>
+
+          <table class="w3-table w3-border w3-bordered w3-margin-top item" id="programchange" style ="margin-bottom: 50px;">
+            <caption>ProgramChange – Represents a ProgramChange event</caption>
+            <tbody>
+              <tr class="item">
+                <td style="width:40%;"><code>ProgramChange(Event)</code></td>
+                <td style="width:60%;">Constructor</td>
+              </tr>
+              <tr class="item">
+                <td><code>number(integer)</code></td>
+                <td>Program change number from 0–127</td>
+              </tr>
+              <tr class="item">
+                <td><code>toString()</code></td>
+                <td>Returns a String representation of the ProgramChange event.</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p><!--===== ChannelPressure =====--></p>
+
+          <table class="w3-table w3-border w3-bordered w3-margin-top item" id="channelpressure" style ="margin-bottom: 50px;">
+            <caption>ChannelPressure – Represents a ChannelPressure event</caption>
+            <tbody>
+              <tr class="item">
+                <td style="width:40%;"><code>ChannelPressure(Event)</code></td>
+                <td style="width:60%;">Constructor</td>
+              </tr>
+              <tr class="item">
+                <td><code>value(integer)</code></td>
+                <td>Aftertouch value from 0–127</td>
+              </tr>
+              <tr class="item">
+                <td><code>toString()</code></td>
+                <td>Returns a String representation of the ChannelPressure event.</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p><!--===== PitchBend =====--></p>
+
+          <table class="w3-table w3-border w3-bordered w3-margin-top item" id="pitchbend" style ="margin-bottom: 50px;">
+            <caption>PitchBend – Represents a PitchBend event</caption>
+            <tbody>
+              <tr class="item">
+                <td style="width:40%;"><code>PitchBend(Event)</code></td>
+                <td style="width:60%;">Constructor</td>
+              </tr>
+              <tr class="item">
+                <td><code>value(integer)</code></td>
+                <td>14-bit pitch bend value from -8192–8191. A value of 0 is center.</td>
+              </tr>
+              <tr class="item">
+                <td><code>toString()</code></td>
+                <td>Returns a String representation of the PitchBend event.</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p><!--===== Fader =====--></p>
+
+          <table class="w3-table w3-border w3-bordered w3-margin-top item" id="fader" style ="margin-bottom: 50px;">
+            <caption>Fader – Represents a Fader event</caption>
+            <tbody>
+              <tr class="item">
+                <td style="width:40%;"><code>Fader(Event)</code></td>
+                <td style="width:60%;">Constructor</td>
+              </tr>
+              <tr class="item">
+                <td><code>value(integer)</code></td>
+                <td>Fader value from 0–127</td>
+              </tr>
+              <tr class="item">
+                <td><code>toString()</code></td>
+                <td>Returns a String representation of the Fader event.</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p><!--===== TimingInfo =====--></p>
+
+          <table class="w3-table w3-border w3-bordered w3-margin-top item" id="timinginfo" style ="margin-bottom: 50px;">
+            <caption>TimingInfo – Contains timing information that describes the state of the host transport and the current musical tempo and meter</caption>
+            <tbody>
+              <tr class="item">
+                <td style="width:40%;"><code>playing:boolean</code></td>
+                <td style="width:60%;">Value is <code>true</code> when the host transport is running</td>
+              </tr>
+              <tr class="item">
+                <td><code>blockStartBeat:real</code></td>
+                <td>Indicates the beat position at the start of the process block</td>
+              </tr>
+              <tr class="item">
+                <td><code>blockEndBeat:real</code></td>
+                <td>Indicates the beat position at the end of the process block</td>
+              </tr>
+              <tr class="item">
+                <td><code>blockLength:real</code></td>
+                <td>Indicates the length of the process block in beats.</td>
+              </tr>
+              <tr class="item">
+                <td><code>tempo:real</code></td>
+                <td>Indicates the host tempo.</td>
+              </tr>
+              <tr class="item">
+                <td><code>meterNumerator:integer</code></td>
+                <td>Indicates the host meter numerator</td>
+              </tr>
+              <tr class="item">
+                <td><code>meterDemoninator:integer</code></td>
+                <td>Indicates the host meter denominator.</td>
+              </tr>
+              <tr class="item">
+                <td><code>cycling:boolean</code></td>
+                <td>Value is <code>true</code> when the host transport is cycling</td>
+              </tr>
+              <tr class="item">
+                <td><code>leftCycleBeat:real</code></td>
+                <td>Indicates the beat position at the start of the cycle range</td>
+              </tr>
+              <tr class="item">
+                <td><code>rightCycleBeat:real </code></td>
+                <td>Indicates the beat position at the end of the cycle range</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p><!--===== MIDI =====--></p>
+
+          <table class="w3-table w3-border w3-bordered w3-margin-top item" id="midi" style ="margin-bottom: 50px;">
+            <caption>MIDI – Contains class-level variables and functions (you don’t instantiate MIDI).</caption>
+            <tbody>
+              <tr class="item">
+                <td style="width:40%;"><code>_noteNames:string[]</code></td>
+                <td style="width:60%;">Contains names such as C and G# for all 128 MIDI notes</td>
+              </tr>
+              <tr class="item">
+                <td><code>_ccNames:string[]</code></td>
+                <td>Contains names such as Expression and Sustain for all 128 MIDI controller numbers</td>
+              </tr>
+              <tr class="item">
+                <td><code>noteNumber(string)</code></td>
+                <td>Returns the MIDI note number for a given note name. For example: C3 or B#2. Flats not permitted.</td>
+              </tr>
+              <tr class="item">
+                <td><code>noteName(real)</code></td>
+                <td>Returns the name for a given MIDI note number.</td>
+              </tr>
+              <tr class="item">
+                <td><code>ccName(real)</code></td>
+                <td>Returns the controller name for a given controller number</td>
+              </tr>
+              <tr class="item">
+                <td><code>allNotesOff()</code></td>
+                <td>Sends the all notes off message on all MIDI channels</td>
+              </tr>
+              <tr class="item">
+                <td><code>normalizeStatus(real)</code></td>
+                <td>Normalizes a value to the safe range of MIDI status bytes (128–239)</td>
+              </tr>
+              <tr class="item">
+                <td><code>normalizeChannel(real)</code></td>
+                <td>Normalizes a value to the safe range of MIDI channels (1–16)</td>
+              </tr>
+              <tr class="item">
+                <td><code>normalizeData(real)</code></td>
+                <td>Normalizes a value to the safe range of MIDI data bytes (0–127)</td>
+              </tr>
+              <tr class="item">
+                <td><code>_sendEventOnAllChannels(Event)</code></td>
+                <td>Sends a given event to all MIDI channels</td>
+              </tr>
+            </tbody>
+          </table>
+
+        </div>
+      </div>
 <!-- End page content -->
-</div>
-
-</body>
-
+    </div>
+  </body>
 </html>

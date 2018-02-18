@@ -2,6 +2,7 @@ body,h1,h2,h3,h4,h5
 {
   font-family: "Poppins", sans-serif
 }
+
 body
 {
   font-size:16px;
@@ -27,14 +28,23 @@ body
 }
 #pageContent
 {
-  margin-left:340px;
-  margin-right:40px;
+  margin-left:320px;
+  margin-right:20px;
+  margin-top: 20px;
+  background-color: #e6e7ed;
+  padding: 50px;
 }
 
 #resultsTable
 {
   overflow-x: scroll;
   overflow-y: scroll;
+}
+
+p
+{
+  line-height: 2.0;
+  text-align: justify;
 }
 
 th

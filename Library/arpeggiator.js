@@ -1,11 +1,3 @@
-//-----------------------------------------------------------------------------
-// Simple Arpeggiator
-//-----------------------------------------------------------------------------
-/*
-		Held notes are tracked in a global array in the HandleMIDI() callback.
-		Notes are chosen and played back during the ProcessMIDI() callback.
-*/
-
 var NeedsTimingInfo = true;
 var activeNotes = [];
 

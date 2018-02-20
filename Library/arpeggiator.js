@@ -1,3 +1,5 @@
+// Allows users to create a sequence that keeps repeating. Example use case: to test out melodies.
+
 var NeedsTimingInfo = true;
 var activeNotes = [];
 

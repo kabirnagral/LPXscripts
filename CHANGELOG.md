@@ -16,6 +16,10 @@ The format for daily commits should be as follows:
 
 A clear and coherent message for whatever was committed. Files edited: List of files edited (it isn't necessary to include markdown files unless there are significant changes).
 
+#### 20/02/2018
+
+Updated the scripts with comments and renamed one of the scripts. Also did research on making the website accessible. Files edited: All
+
 #### 19/02/2018
 
 Merged the [pull request](https://github.com/kabirnagral/LPXscripts/pull/10) from Pyeskyhigh. Edited index.html to make images appear. Files edited: index.html, [the other files edited in the pull request that was merged](https://github.com/kabirnagral/LPXscripts/pull/10/files).

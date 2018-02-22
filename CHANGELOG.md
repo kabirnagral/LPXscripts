@@ -16,6 +16,10 @@ The format for daily commits should be as follows:
 
 A clear and coherent message for whatever was committed. Files edited: List of files edited (it isn't necessary to include markdown files unless there are significant changes).
 
+#### 21/02/2018
+
+Updated the webite and did researched website accessibility. Files edited: index.html
+
 #### 20/02/2018
 
 Updated the scripts with comments and renamed one of the scripts. Also did research on making the website accessible. Files edited: All

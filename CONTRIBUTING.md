@@ -10,6 +10,8 @@ to abide by the LPXscripts [code of conduct](https://github.com/kabirnagral/LPXs
 [Git and GitHub](#git-and-github)
 
 [Contributing Basics](#contributing-basics)
+* [Contributing to the Library](#contributing-to-the-library)
+* [Contributing to the Guide](#contributing-to-the-guide)
 * [Submitting Changes](#submitting-changes)
 * [Commit Messages](#commit-messages)
 * [Making Changes Locally](#making-changes-locally)
@@ -35,6 +37,14 @@ Clone your fork of this repository (Don't know how? Refer to the [resources](#re
 Make your changes locally on your system (more about that [here](#making-changes-locally)), while making sure that you follow our [coding conventions](#coding-conventions).
 
 Test your changes to see if they work.
+
+### Contributing to the Library
+
+To contribute to the Library, you need to have Logic Pro X installed on your system (the system should run OS X, although there may be people who know workarounds). You need to access the Logic Pro Scripter plugin on a MIDI/software instrument through the MIDI FX options (see [here](https://kabirnagral.github.io/LPXscripts/#how-to-use-library) on how to get there). Once you are there, you can use regular JavaScript, the basic Apple tutorials and this [quick reference guide] (https://kabirnagral.github.io/LPXscripts/#reference-guide) to start developing your own plugins.
+
+### Contributing to the Guide
+
+The website is contained in the docs folder. To contribute to the website, you do not need to have Logic Pro (although that definitely helps). All you need is basic HTML/CSS experience. In fact, you don't even need any coding experience. You could raise issues you have with the website [here](https://github.com/kabirnagral/LPXscripts/issues/new), or even provide language translations for the website (raise an issue for the same).
 
 ### Submitting Changes
 

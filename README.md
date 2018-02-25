@@ -16,6 +16,8 @@ The library of scripts can be found in the *Library* folder.
 
 Open the *Library* folder. Open one of the javascript files (the files with the *.js* file format). Copy the code from the file and paste it into the plugin's Script Editor. Run the script and you're good to go!
 
+Refer to [this guide](https://kabirnagral.github.io/LPXscripts/#how-to-use-library) for more!
+
 ### Contributing to the Library
 
 Want to contribute to the library? See the [CONTRIBUTING.md](https://github.com/kabirnagral/LPXscripts/blob/master/CONTRIBUTING.md) file to read more about how to contribute.

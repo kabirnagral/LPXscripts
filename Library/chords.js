@@ -1,3 +1,4 @@
+// Triggers chords derived from played note
 
 // Chordtypes
 var maj_Chord = [4, 7];

@@ -1,6 +1,8 @@
+// Constructs a sequence of notes triggered relative to the base note
+
 var NeedsTimingInfo = true;
 var activeNotes = [];
-var sequence = [4, 3, 5];
+var sequence = [2, 2, 1, 2, 2, 2, 1]; // Choose your sequence here. Enter integers for ups or downs
 /* needed to make beatPos work */
 function HandleMIDI(event) {
   if (event instanceof NoteOn) {

@@ -117,6 +117,7 @@
       <hr style="width:50px;border:5px solid indigo" class="w3-round">
       <input class="w3-input" oninput="w3.filterHTML('#quickrefTables', '.item', this.value)" placeholder="Search the quick reference">
 
+      <!-- Adapted from https://culturedear.wordpress.com/2015/07/23/feels-so-good-on-linnstrument-with-logic-pro-scripter/  -->
       <div style="overflow-x: auto; overflow-y: auto" id="quickrefTables">
           <table class="w3-table w3-border w3-bordered w3-margin-top item" id="global-attributes-and-functions"
             style ="margin-bottom: 50px;">
@@ -144,11 +145,11 @@
               </tr>
               <tr class="item">
                 <td><code>Reset()</code></td>
-                <td>This function is called when the plugin is reset</td>
+                <td>This function is called when the plugin is reset. Can be overriden.</td>
               </tr>
               <tr class="item">
                 <td><code>Trace(value)</code></td>
-                <td>Prints a&nbsp;message to&nbsp;the console that represents the&nbsp;supplied value of any type</td>
+                <td>Prints a message to the console that represents the supplied value of any type. Similar to <code>console.log(value)</code> in regular javascript</td>
               </tr>
               <tr class="item">
                 <td><code>GetTimingInfo():TimingInfo</code></td>
@@ -164,7 +165,7 @@
           <p><!--===== Event =====--></p>
 
           <table class="w3-table w3-border w3-bordered w3-margin-top item" id="events" style ="margin-bottom: 50px;">
-            <caption>Event – Base class for all events</caption>
+            <caption>Event – Base class for all events. Call functions using dot notation.</caption>
             <tbody>
               <tr class="item">
                 <td style="width:40%;"><code>send()</code></td>
@@ -200,7 +201,7 @@
           <p><!--===== Note =====--></p>
 
           <table class="w3-table w3-border w3-bordered w3-margin-top item" id="notes" style ="margin-bottom: 50px;">
-            <caption>Note – Base class for note events</caption>
+            <caption>Note Events</caption>
             <tbody>
               <tr class="item">
                 <td style="width:40%;"><code>Note()</code></td>
@@ -216,7 +217,7 @@
           <p><!--===== NoteOn =====--></p>
 
           <table class="w3-table w3-border w3-bordered w3-margin-top item" id="note-on" style ="margin-bottom: 50px;">
-            <caption>NoteOn – Represents a note on event</caption>
+            <caption>NoteOn Events</caption>
             <tbody>
               <tr class="item">
                 <td style="width:40%;"><code>NoteOn(Event)</code></td>
@@ -236,7 +237,7 @@
           <p><!--===== NoteOff =====--></p>
 
           <table class="w3-table w3-border w3-bordered w3-margin-top item" id="note-off" style ="margin-bottom: 50px;">
-            <caption>NoteOff – Represents a note off event</caption>
+            <caption>NoteOff Events</caption>
             <tbody>
               <tr class="item">
                 <td style="width:40%;"><code>NoteOff(Event)</code></td>
